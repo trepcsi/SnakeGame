@@ -104,6 +104,9 @@ def game():
             score += 100
             snake_len += 1
             food_consumed = True
+        if score >= 1000:
+            draw_message("Nyomjad Nati! <3", (255, 26, 140), (200, 10), 30)
+            pygame.display.update()
         clock.tick(15)
 
     pygame.quit()
