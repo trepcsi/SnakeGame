@@ -3,10 +3,10 @@ import random
 
 pygame.init()
 
-snake_color = (200, 100, 255)
-food_color = (255, 100, 0)
-text_color = (255, 255, 255)
-bg_color = (50, 80, 10)
+snake_color = (25, 25, 77)
+food_color = (179, 60, 0)
+text_color = (255, 255, 128)
+bg_color = (163, 163, 117)
 window_width = 400
 window_height = 300
 snake_block = 10
@@ -17,7 +17,8 @@ pygame.display.set_caption('Snake Goes Yummy')
 
 def draw_snake(snake):
     for i in snake:
-        pygame.draw.rect(dis, snake_color, [i[0], i[1], snake_block, snake_block])
+        pygame.draw.rect(dis, (0, 77, 0), [i[0], i[1], snake_block, snake_block])
+        pygame.draw.rect(dis, snake_color, [i[0] + 1, i[1] + 1, snake_block - 1, snake_block - 1])
 
 
 def draw_message(msg, color, place, size):
@@ -42,7 +43,7 @@ def game():
     game_over_pause = False
     while running:
         while game_over_pause:
-            draw_message("You Lost! Press R to restart!", text_color, (10, 50), 35)
+            draw_message("You Lost! Press 'R' to restart!", text_color, (10, 80), 35)
             pygame.display.update()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
